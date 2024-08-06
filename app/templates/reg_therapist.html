@@ -58,7 +58,7 @@
                                 <p>¿Dónde estás ubicado?</p>
                                 <div class="col-12 g-3 w-50">
                                     <select name="city" id="city" class="form-select bg-white border-0" style="height: 55px;">
-                                        <option name="city" selected disabled>Escoger ciudad</option>
+                                        <option name="city" selected disabled>Escoger región</option>
                                         {%for city in all_cities%}
                                         <option name="city" value="{{city}}">{{city}}</option>
                                         {%endfor%}
@@ -68,9 +68,7 @@
                             <div class="col-12 col-sm-12">
                                 <select name="modalidad" id="modalidad" class="form-control bg-white border-0"
                                     placeholder="Modalidad de consulta" style="height: 55px;" required>
-                                    <option name="modalidad" id="" value="" disabled selected>Selecciona la modalidad de
-                                        tu
-                                        consulta</option>
+                                    <option name="modalidad" id="" value="" disabled selected>Selecciona la modalidad de tu consulta</option>
                                     <option name="modalidad" id="" value="office">In person/Office</option>
                                     <option name="modalidad" id="" value="remote">Remote/Virtual</option>
                                     <option name="modalidad" id="" value="hybrid">Hybrid (both)</option>

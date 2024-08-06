@@ -97,9 +97,10 @@
 }
 
 .hero-header {
-    background: url(../img/head.jpeg) top right no-repeat;
+    background: url(../img/foto_inicio.jpeg) top right no-repeat;
     background-size: cover;
     opacity: 0.9;
+    height: 200px;
 }
 
 .service-item {
@@ -346,3 +347,73 @@
 .prof-article-div{
     min-height: 12rem;
 }
+
+
+
+
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-250px * 7));
+    }
+  }
+  
+  .slider {
+    background: white;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    
+  }
+  
+  .slider::before,
+  .slider::after {
+    background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+  }
+  
+  .slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+  
+  .slider::before {
+    left: 0;
+    top: 0;
+  }
+  
+  .slider .slide-track {
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(250px * 14);
+  }
+  
+  .slider .slide {
+    height: 100px;
+    width: 250px;
+  }
+
+
+.carousel-nav-icon {
+    height: 48px;
+    width: 48px;
+}
+.carousel-item {
+    .col, .col-sm, .col-md {
+        margin: 8px;
+        height: 300px;
+        background-size: cover;
+        background-position: center center;
+    }
+}
+ 

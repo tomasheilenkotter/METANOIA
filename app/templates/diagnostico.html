@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+{% block home %} active {% endblock %}
+
+{% block styles %}
+<link type="text/css" href="{{ url_for('static', filename='css/dropdown_ms.css')}}" rel="stylesheet">
+{% endblock %}
+{% block main %}
+
+
+
+<!-- Blog Start -->
+<div class="container py-5">
+    <div class="row">
+        <div class="col-8">
+            <div>
+                <h1 class="text-center text-light rounded" style="background-color: #2d61e9;">Terapia Online Individual Adultos y Adultos Jovenes</h1>
+                <br>
+                <span class="text-dark">
+                    En Metanoia, ofrecemos terapia psicológica online individual a tan solo <b>$25.000</b>, diseñada especialmente
+                    para adultos y adultos jóvenes mayores de 18 años. Nuestro enfoque personalizado y profesional
+                    permite a los pacientes recibir atención psicoterapéutica de alta calidad desde cualquier lugar, utilizando
+                    plataformas digitales seguras y confiables.
+                </span>
+            </div>
+            <br>
+            <div>
+                <h5> Beneficios de la Terapia Psicológica Online Individual</h5>
+                <ul class="text-dark">
+                    <li> Accesibilidad y Comodidad: Recibe atención desde la comodidad de tu hogar, sin necesidad de
+                        desplazarte.
+                    </li>
+                    <li>
+                        Flexibilidad Horaria: Programa tus sesiones en horarios convenientes, incluyendo noches y fines de semana.
+                    </li>
+                    <li>
+                        Privacidad y Confidencialidad: Un entorno seguro donde puedes abrirte sobre tus preocupaciones con
+                        total confianza.
+                    </li>
+                    <li>
+                        Eliminación de Barreras Geográficas: Accede a profesionales cualificados sin importar dónde te encuentres.
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <div class="text-center">
+                <button type="button" class="btn text-light mx-5" style="background-color: #2d61e9;"><a href="/agendar_sesion" class="text-light">Agenda tu sesión</a></button>    
+                <button href="" type="button" class="btn text-light mx-5" style="background-color: #2d61e9;"><a class="text-light" href="https://docs.google.com/forms/d/1s8ArcOjIQOpHszV6xWkms4n16v-iVjomaLy4gKEw13g/viewform?edit_requested=true">Haz tu PsicoMatch</a></button>    
+            </div>
+        </div>
+        <div class="col-4">
+            <img src="{{ url_for('static', filename='img/material_1.png')}}" alt="" style="width: 480px;">
+        </div>
+    </div>
+</div>
+<!-- Blog End -->
+
+
+<div class="container-fluid" style="background-color: #2d61e9;">
+    <br>
+    <h3 class="text-light text-center">¡Conoce a nuestros Psicólogos/as!</h3>
+    <br>
+    <div class="row">
+        <div class="col-1 d-flex align-items-center justify-content-center">
+            <a href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <div class="carousel-nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path d="m88.6,121.3c0.8,0.8 1.8,1.2 2.9,1.2s2.1-0.4 2.9-1.2c1.6-1.6 1.6-4.2 0-5.8l-51-51 51-51c1.6-1.6 1.6-4.2 0-5.8s-4.2-1.6-5.8,0l-54,53.9c-1.6,1.6-1.6,4.2 0,5.8l54,53.9z"/>
+                    </svg>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <!--Start carousel-->
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col" style="height: 500px;">
+                                <a href="/tprofile/9">
+                                    <div class="card" style="background-color: #faa330;">
+                                        <br>
+                                        <h3 class="card-title text-center">Walter Acuña</h3>
+                                        <img src="{{ url_for('static', filename='img/therapist/foto_walter.png')}}" class="card-img-top" alt="Walter Acuña">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col" style="height: 500px;">
+                                <a href="/tprofile/2">
+                                    <div class="card" style="background-color: #faa330;">
+                                        <br>
+                                        <h3 class="card-title text-center">Thanya Casanova</h3>
+                                        <img src="{{ url_for('static', filename='img/therapist/foto_thanya.png')}}" class="card-img-top" alt="Thanya Casanova">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col" style="height: 500px;">
+                                <a href="/tprofile/3">
+                                    <div class="card" style="background-color: #faa330;">
+                                        <br>
+                                        <h3 class="card-title text-center">Laura Martinez</h3>
+                                        <img src="{{ url_for('static', filename='img/therapist/foto_laura.png')}}" class="card-img-top" alt="Laura Martinez">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col" style="height: 500px;">
+                                <a href="/tprofile/8">
+                                    <div class="card" style="background-color: #faa330;">
+                                        <br>
+                                        <h3 class="card-title text-center">Antonia Saldias</h3>
+                                        <img src="{{ url_for('static', filename='img/therapist/foto_anto.png')}}" class="card-img-top" alt="Antonia Saldias">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col" style="height: 500px;">
+                                <a href="/tprofile/4">
+                                    <div class="card" style="background-color: #faa330;">
+                                        <br>
+                                        <h3 class="card-title text-center">Isidora Schlesinger</h3>
+                                        <img src="{{ url_for('static', filename='img/therapist/foto_isi.png')}}" class="card-img-top" alt="Isidora Schlesinger">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col" style="height: 500px;">
+                                <a href="/tprofile/6">
+                                    <div class="card" style="background-color: #faa330;">
+                                        <br>
+                                        <h3 class="card-title text-center">Williams Zamorano</h3>
+                                        <img src="{{ url_for('static', filename='img/therapist/foto_williams.png')}}" class="card-img-top" alt="Williams Zamorano">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col" style="height: 500px;">
+                                <a href="/tprofile/10">
+                                    <div class="card" style="background-color: #faa330;">
+                                        <br>
+                                        <h3 class="card-title text-center">Esperanza Mena</h3>
+                                        <img src="{{ url_for('static', filename='img/therapist/foto_esperanza.png')}}" class="card-img-top" alt="Williams Zamorano">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--End carousel-->
+        </div>
+        <div class="col-1 d-flex align-items-center justify-content-center">
+            <a  href="#carouselExampleIndicators" data-slide="next">
+                <div class="carousel-nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z"/>
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Quienes somos -->
+<div class="container-fluid my-5">
+    <div class="col">
+        <h1 class="text-center" style="color: #2d61e9;">¿Quiénes somos?</h1>
+    </div>
+    <br>
+    <div class="col text-center">
+        <h3 class="text-center text-light rounded" style="background-color: #faa330;">En Espacio Metanoia, nuestra misión es ofrecer un lugar seguro y acogedor donde cada persona pueda encontrar apoyo emocional y crecer en su
+            bienestar. Nos dedicamos a brindar atención psicoterapéutica respetuosa, accesible y personalizada, acompañando a cada individuo en su
+            camino hacia una vida más plena y saludable."</h3>
+    </div>
+    <br>
+    <div class="col text-center mx-5">
+        <h3 class="text-center text-light rounded" style="background-color: #2d61e9;"> Somos el espacio en el que te puedes sentir seguro y libre de prejuicios, somos espacio metanoia.</h3>
+    </div>
+    <br>
+</div>
+<!-- Hero End -->
+
+{% endblock %}
+
+
+{%block javascript%}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='scripts/my_select.js') }}"></script>
+{% endblock %}

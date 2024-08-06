@@ -8,7 +8,7 @@ import pdb
 import hashlib
 import smtplib
 from email.mime.text import MIMEText
- 
+
 bcrypt = Bcrypt(app)
 
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$') 
@@ -107,7 +107,7 @@ class User:
         msg = MIMEText("Your confirmation code is: " + confirmation_hash)
         msg['Subject'] = 'Email Confirmation'
         msg['From'] = 'EMAIL@gmail.com'
-        msg['To'] = email
+        msg['To'] = 'tomas.heilenkotter2996@gmail.com'
 
         # Connect to the email server using SSL
         server = smtplib.SMTP('smtp.gmail.com', 587)

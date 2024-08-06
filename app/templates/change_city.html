@@ -16,9 +16,9 @@
         <div class="container bg-light" style="height: 80vh;">
             <form action="/change-city" class="form" method="post">
                 <div class="col-12 g-3 w-50 p-5">
-                    <h3>Cambia tu ciudad...</h3>
+                    <h3>Cambia tu Región...</h3>
                     <select name="city" id="city" class="form-select bg-white border-0" style="height: 55px;">
-                        <option name="city" selected disabled>Escoger ciudad</option>
+                        <option name="city" selected disabled>Escoger región</option>
                         {%for city in all_cities%}
                         <option name="city" value="{{city}}">{{city}}</option>
                         {%endfor%}

@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block home %} active {% endblock %}
+
+{% block styles %}
+<link type="text/css" href="{{ url_for('static', filename='css/dropdown_ms.css')}}" rel="stylesheet">
+{% endblock %}
+{% block main %}
+
+
+
+<!-- Blog Start -->
+<div class="container py-5">
+    <div class="row">
+        <div class="col">
+            <!-- Plain Text Start -->
+            <div style="margin-bottom: 50px;">
+                <div class="row">
+                    <div class="col-8">
+                        <h4 class="d-inline-block text-uppercase border-bottom border-5 mb-4" style="color: #2d61e9;">Encuentra psicólogos en tu distrito</h4>
+                    </div>
+                    <div class="col-4">
+                        <a href="/change-city" class="btn btn-light">Cambiar ciudad</a>
+                    </div>
+                </div>
+                <div class="bg-light rounded text-center" style="padding: 30px;">
+                    <form action="/search-district" method="POST">
+                        <div class="bg-light rounded text-center" style="padding: 30px;">
+                            <div class="col-12 col-sm-12">
+                                <select name='location_id' class="form-select bg-white border-0" style="height: 55px;">
+                                    <option selected disabled>Distrito/Barrio</option>
+                                    {%for location in locations%}
+                                    <option name='location_id' value="{{location.id}}">{{location.district}}</option>
+                                    {%endfor%}
+                                </select>
+                            </div>
+                        <button type="submit" class="btn text-light m-5" style="background-color: #2d61e9;">Agregar distrito</button>
+                    </form>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <!-- Plain Text End -->
+            <!-- Category Start -->
+            <div class="col-12 mb-3">
+                <h4 class="d-inline-block text-uppercase border-bottom border-5 mb-4" style="color: #2d61e9;">Busca psicologos por especialidad</h4>
+                <div class="bg-light rounded text-center p-3">
+                    <form action="/search-cat" method="POST">
+                        <div class="bg-light rounded text-center" style="padding: 30px;">
+                            <div class="col-12 col-sm-12">
+                                <select name='category_id' class="form-select bg-white border-0" style="height: 55px;">
+                                    <option selected disabled>Selecciona una categoria</option>
+                                    {%for category in categories%}
+                                    <option name='category_id' value="{{category.id}}">{{category.name}}</option>
+                                    {%endfor%}
+                                </select>
+                            </div>
+                        <button type="submit" class="btn text-light m-5" style="background-color: #2d61e9;">Agregar distrito</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Blog End -->
+
+
+
+{% endblock %}
+
+
+{%block javascript%}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='scripts/my_select.js') }}"></script>
+{% endblock %}

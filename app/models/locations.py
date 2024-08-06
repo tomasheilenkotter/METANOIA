@@ -36,15 +36,15 @@ class Location:
 
     
     @classmethod
-    def city_districts(cls,city_name):
+    def city_districts(cls,city):
 
         query = '''
-            SELECT * from location where city = %(city_name)s
+            SELECT * from location where city = %(city)s
             order by district ASC;
             '''
 
         data = {
-        'city_name': (city_name)
+        'city': (city)
         }
 
         results = connectToMySQL('psicoapp').query_db(query,data)

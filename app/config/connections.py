@@ -6,8 +6,8 @@ class MySQLConnection:
         # cambiar el usuario y la contraseña según sea necesario
         connection = pymysql.connect(host = 'localhost',
             user = 'root', 
-            password = '12345678', 
-            db = db,
+            password = '', 
+            db = 'psicoapp',
             charset = 'utf8mb4',
             cursorclass = pymysql.cursors.DictCursor,
             autocommit = True)

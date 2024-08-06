@@ -49,14 +49,14 @@ def home():
 #     return render_template('found_therapists.html')
 
 @page.route('/change-city')
-@login_required
+#@login_required
 def show_change_city():
     all_cities = Location.get_all()
 
     return render_template('change_city.html', all_cities = all_cities)
 
 @page.route('/change-city', methods=['POST'])
-@login_required
+#@login_required
 def change_city():
     Location.change(request.form,session['user']['id'])
 
@@ -91,10 +91,10 @@ def search_city():
     return redirect('/dashboard')
 
 @page.route('/search-district',methods=['POST'])
-@login_required
+#@login_required
 def search_district():
     if 'user' not in session or session['user']==None:
-        flash('Debes registrate para acceder a esta función', 'primary')
+        print('Debes registrate para acceder a esta función', 'primary')
         return redirect('/register')
     logged = True
     
@@ -125,7 +125,22 @@ def search_category():
     return render_template('search_results.html',results=results,text=text,user=user, logged = logged)
     
     
+@page.route('/terapia_adultos')
+def terapia_adultos():
+    return render_template('terapia_adultos.html')
 
+@page.route('/terapia_infantil')
+def terapia_infantil():
+    return render_template('terapia_infantil.html')
 
+@page.route('/diagnostico')
+def diagnostico():
+    return render_template('diagnostico.html')
 
+@page.route('/terapia_online')
+def terapia_online():
+    return render_template('terapia_online.html')
 
+@page.route('/agendar_sesion')
+def agendar_sesion():
+    return render_template('agendar_sesion.html')

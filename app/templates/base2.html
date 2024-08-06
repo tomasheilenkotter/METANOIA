@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>PSICOAPP</title>
+    <title>METANOIA</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -35,9 +35,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/toastr.min.css')}}">
 
     <!-- icono de Psicoapp -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='img/apple-touch-icon.png')}}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='img/favicon-32x32.png')}}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='img/favicon-16x16.png')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='img/logo_pequeño.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='img/logo_pequeño.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='img/logo_pequeño.png')}}">
     <link rel="manifest" href="{{ url_for('static', filename='img/site.webmanifest')}}">
 
     <!-- content delivery network (CDN - Content delivery network): -->
@@ -88,57 +88,97 @@
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid sticky-top bg-white shadow-sm">
+    <!-- Navbar Start -->
+    <div class="container-fluid shadow-sm">
         <div class="container">
-            <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
+            <nav class="navbar navbar-expand-lg navbar-light py-3 py-lg-0">
                 <a href="/" class="navbar-brand">
-                    <h1 class="m-0 text-uppercase text-primary"><span><img
-                                src="{{ url_for('static', filename='img/psychologist_icon.png')}}"
-                                style="width: 65px; height: 60px; padding-right: 10px;" alt=""></span>PSICOAPP</h1>
+                    <h1 class="m-0" style="color: #2d61e9;">¡Bienvenid@!</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                {% if logged%}
                 <form action="/search-therapist" method="post">
                     <div class="row px-5 mx-5">
                         <div class="col-10 p-0">
                             <input name="text" type="text" class="form-control m-0" placeholder="Busca un psicólogo">
                         </div>
                         <div class="col-2 p-0">
-                            <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+                            <button class="btn" style="background-color: #2d61e9;"><i class="fa text-light fa-search"></i></button>
                         </div>
                     </div>
                 </form>
+                {%endif%}
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="mb-8">
                     </div>
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="/" class="nav-item nav-link">Home</a>
                         {% if logged%}
                         {%if user.type == 0%}
-                        <a href="/tprofile/{{user.id}}" class="nav-item nav-link"><ion-icon class="edit-icon-profile"
-                                name="person-circle-outline"></ion-icon></a>
-                        <a href="/edit-therapist" class="nav-item nav-link"><ion-icon class="edit-icon-profile"
-                                name="cog-outline"></ion-icon></a>
+                        <a href="/tprofile/{{user.id}}" class="nav-item nav-link"><ion-icon class="edit-icon-profile" name="person-circle-outline"></ion-icon></a>
+                        <a href="/edit-therapist" class="nav-item nav-link"><ion-icon class="edit-icon-profile" name="cog-outline"></ion-icon></a>
                         {%elif user.type == 1%}
-                        <a href="/edit-patient" class="nav-item nav-link"><ion-icon class="edit-icon-profile"
-                                name="cog-outline"></ion-icon></a>
+                        <a href="/patient-reg" class="nav-item nav-link"><ion-icon class="edit-icon-profile" name="cog-outline"></ion-icon></a>
                         {%endif%}
-                        <a href="/messages" class="nav-item nav-link"><ion-icon class="edit-icon-profile"
-                                name="mail-unread-outline"></ion-icon></a>
-                        <a href="/logout" class="nav-item nav-link">
-                            <img src="{{ url_for('static', filename='img/logout.png')}}"
-                                style="height: 30px; width: 30px;" alt="Cerrar sesión">
-                        </a>
+                        <a href="/messages" class="nav-item nav-link"><ion-icon class="edit-icon-profile" name="mail-unread-outline" ></ion-icon></a>
+                        <a href="/logout" class="nav-item nav-link" ><ion-icon class="edit-icon-profile" name="exit-outline"></ion-icon></a>
                         {% else %}
-                        <a href="/login" class="nav-item nav-link">Log in</a>
+                        <!-- <a href="/register" class="nav-item text-light nav-link">Registrarse</a> -->
+                        <!-- <a href="/login" class="nav-item text-light nav-link">Iniciar sesión</a> -->
                         {% endif %}
                     </div>
                 </div>
             </nav>
         </div>
     </div>
-
+    <!--Navbar end-->
+    <div class="slider">
+        <div class="slide-track">
+            <div class="slide">
+                <img src="{{ url_for('static', filename='img/logo_pequeño3.png')}}" height="100" width="180" alt="" />
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='img/logo_pequeño3.png')}}" height="100" width="180" alt="" />
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='img/logo_pequeño3.png')}}" height="100" width="180" alt="" />
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='img/logo_pequeño3.png')}}" height="100" width="180" alt="" />
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='img/logo_pequeño3.png')}}" height="100" width="180" alt="" />
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='img/logo_pequeño3.png')}}" height="100" width="180" alt="" />
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='img/logo_pequeño3.png')}}" height="100" width="180" alt="" />
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='img/logo_pequeño3.png')}}" height="100" width="180" alt="" />
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='img/logo_pequeño3.png')}}" height="100" width="180" alt="" />
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='img/logo_pequeño3.png')}}" height="100" width="180" alt="" />
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='img/logo_pequeño3.png')}}" height="100" width="180" alt="" />
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='img/logo_pequeño3.png')}}" height="100" width="180" alt="" />
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='img/logo_pequeño3.png')}}" height="100" width="180" alt="" />
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='img/logo_pequeño3.png')}}" height="100" width="180" alt="" />
+            </div>
+        </div>
+    </div>
     <!--Navbar end-->
 
     <main role="main">
@@ -147,10 +187,161 @@
         {% endblock %}
     </main>
 
-    
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light mt-5 py-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">
+                        Contáctanos</h4>
+                    <p class="mb-4">No dudes en contactarnos si tienes alguna duda</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>123
+                        Street, New York, USA</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@pasicoapp.com</p>
+                    <p class="mb-0"><i class="fa fa-phone-alt text-primary me-3"></i>+123 456 78 90
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">
+                        Popular Links</h4>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Home</a>
+                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Acerca</a>
+                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>blog</a>
+                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Contáctanos</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">
+                        Newsletter</h4>
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control p-3 border-0" placeholder="Email">
+                            <button class="btn btn-primary">Enviar</button>
+                        </div>
+                    </form>
+                    <h6 class="text-primary text-uppercase mt-4 mb-3">Síguenos</h6>
+                    <div class="d-flex">
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle" href="#"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark text-light border-top border-secondary py-4">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-md-0">&copy; <a class="text-primary" href="#">PSICOAPP</a>. Todos
+                        los derechos
+                        reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Designed by <a class="text-primary" href="https://htmlcodex.com">HTML Codex</a></p>
+                    <a href="https://www.flaticon.com/free-icons/psychologist" title="psychologist icons">Psychologist
+                        icons created by Freepik - Flaticon</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
+
+
+<!-- MENSAJES -->
+<div class="col-lg-4">
+    <div style="margin-bottom: 50px;">
+        {%if therapist.id == user.id%}
+        <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 mb-4">Nuevos mensajes</h4>
+        <div class="bg-light rounded text-center" style="padding: 30px;">
+            <div class="col-12 col-sm-12">
+                {%for message in recieved_messages%}
+                {%if message.status != 'deleted'%}
+                <div class="btn bg-white border-0 col-sm-12 mb-3" style="height: 10rem; ">
+                    {%if message.status == 'sent'%}
+                    <div class="row" style="background-color: green; border-radius: 1rem; width: 30%; margin: 0.5rem; align-items: center;">
+                        <div class="col-1">
+                            <ion-icon style="color:white" name="alert-circle-outline"></ion-icon>
+                        </div>
+                        <div class="col-3">
+                            <p class="h5 mt-2" style="color:white" class="col-10">NEW</p>
+                        </div>
+                    </div>
+                    {%endif%}
+                    <div class="message-info">
+                        <p class="h5 text-start" style="font-size: 1.2rem;">From: {{message.sender.name}}</p>
+                        <p class="h5 text-start school_name" style="font-size: 1rem;">{{message.text[:60]}}...</p>
+                    </div>
+                </div>
+                {%endif%}
+                {%endfor%}
+            </div>
+            <br>
+            <a href="/messages" class="btn btn-primary py-2 px-4">Ver todos</a>
+        </div>
+        {%else%}
+        <!--<h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-white mb-4">Enviar
+            un mensaje</h4>
+        <div class="bg-light rounded p-5">
+            <div class="row g-2">
+                <p class="p-0">Si quieres agendar una cita con {{therapist.name}}, deja tus datos para que te
+                    contacte
+                    via email o telefono!</p>
+                <form action="/send-msg/{{therapist.id}}" , method="post">
+                    <div class="col-12 mb-2">
+                        <textarea name="text" class="form-control bg-white border-0" rows="5"
+                            placeholder="">Hola {{therapist.name}}! Me gustaría agendar una cita contigo, por favor contáctame. Mi email es:</textarea>
+                    </div>
+                    <div class="col-12 mb-2">
+                        <button class="btn btn-primary w-100 py-3 mt-2" type="submit">Enviar mensaje</button>
+                    </div>
+                </form>
+            </div>
+        </div> -->
+        {%endif%}
+    </div>
+    <!-- PUBLICACIONES -->
+    <!-- <div class="mb-5">
+        <div class="row">
+            <div class="col-5">
+                <h4 class="text-primary text-uppercase border-bottom border-5 mb-4">publicaciones</h4>
+            </div>
+            <div class="col-7">
+                {%if user.id == therapist.id%}
+                <a href="/add_publication" class="btn btn-primary rounded-pill mx-5">+ Subir Nueva</a>
+                {%endif%}
+            </div>
+        </div>
+        {%for publication in therapist.publications%}
+        <div class="d-flex rounded overflow-hidden mb-3">
+            <div class="row bg-light p-3" style="height: 15rem;">
+                <div class="col-5">
+                    <embed src="{{ url_for('static', filename=publication.file_path)}}" width="100%" height="100%" />. 
+                </div>
+                <div class="col-7">
+                    <a href="/publication/{{publication.id}}" class="h5">{{publication.title}}</a>
+                    <div class="h6 school_name">{{publication.description}}</div>
+                    <div class="h6 ">{{publication.publisher}}</div>
+                    <div class="h6 date">{{publication.date}}</div>
+                    <a href="/publication/{{publication.id}}" class="btn btn-primary">Ver PDF</a>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div> -->
+
+
+</div>
 
 
 
@@ -174,15 +365,7 @@
     <!-- Template Javascript -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/main.js')}}"></script>
 
-    <script>
-        {% with messages = get_flashed_messages(with_categories=true) %} 
-            {% if messages %}
-                {% for category, message in messages %}
-                    toastr.{{category}}("{{message}}");
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-    </script>
+
 
     {% block javascript %}{% endblock %}
 </body>

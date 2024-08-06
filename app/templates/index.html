@@ -10,20 +10,14 @@
 <!-- Navbar End -->
 
     <!-- Hero Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 hero-header">
-        <div class="container py-5">
-            <div class="row justify-content-start">
-                <div class="col-lg-8 text-center text-lg-start">
-                    <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5" style="border-color: rgba(256, 256, 256, .3) !important;">Bienvenido</h5>
-                    <h1 class="display-1 text-white mb-md-4">Psicoapp</h1>
-                        <h5 class="text-white mb-md-2">Conoce a tu psicólogo</h5>
-                        <h5 class="text-white mb-md-2">Accede a cientos de artículos y publicaciones</h5>
-                        <h5 class="text-white mb-md-2">Busca en base a tus necesidades</h5>
-                        <h5 class="text-white mb-md-4">Maneja tus citas</h5>
-                    <div class="pt-2">
-                        <a id="scroll-button" class="btn btn-light rounded-pill py-md-3 px-md-5 mx-2">REGISTRARSE</a>
-                        <a id="section-to-scroll-to" href="/login" class="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2">INICIAR SESIÓN</a>
-                    </div>
+    <div class="container-fluid hero-header position-relative">
+        <div id="carouselExampleSlidesOnly" class="carousel slide texto_carousel position-absolute top-50 start-50 translate-middle" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active rounded" style="background-color: #faa330;">
+                    <h2 class="text-center">¿No sabes que psicólogo/a escoger? ¡Haz tu PsicoMatch!</h2>
+                </div>
+                <div class="carousel-item rounded" style="background-color: #faa330;">
+                    <h2 class="text-center">¡Conoce todos nuestros servicios a bajo costo!</h2>
                 </div>
             </div>
         </div>
@@ -31,59 +25,40 @@
     <!-- Hero End -->
 
 
-    <!-- Appointment Start -->
-    <div class="container-fluid bg-primary my-5 py-5">
-        <div class="container py-5">
-            <div class="row gx-5">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <div class="mb-4">
-                        <h5 class="d-inline-block text-white text-uppercase border-bottom border-5">Regístrate</h5>
-                        <h1 class="display-4">Accede a todos nuestros servicios</h1>
-                    </div>
-                    <p class="text-white mb-5">Puedes encontrar al psicólogo de tu preferencia, ver artículos y publicaciones por temas de interés, contactar a un profesional y mucho más!</p>
-                    <a class="btn btn-outline-dark rounded-pill py-3 px-5" href="/dashboard">Conoce nuestra pagina</a>
-                    <p></p>
+    <!-- Servicios Start -->
+    <div class="container-fluid py-5 px-3">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col">
+                <a href="/terapia_adultos"><img src="{{ url_for('static', filename='img/terapia-individual.jpeg')}}" class="card-img-top" alt="..." style="height: 230px; border-radius: 43px;"></a>
+                <div class="card-body">
+                    <h4 class="text-center rounded text-light" style="background-color: #faa330;">Terapia Online Individual Adultos y Adultos Jovenes</h4>
                 </div>
-                <div class="col-lg-6 " >
-                    <div class="bg-white text-center rounded p-5">
-                        <h1 class="mb-4">Registrarse</h1>
-                            <p>¿Ya tienes una cuenta?</p><span><a href="log_in.html">Inicia sesión</a></span>
-                        <form action="/register" method="POST">
-                            <div class="row g-3">
-                                <div class="col-12 col-sm-12">
-                                    <input type="text" name="full_name" class="form-control bg-light border-0" placeholder="Nombre completo" style="height: 55px;" required>
-                                </div>
-                                <div class="col-12 col-sm-12">
-                                    <input type="email" name="email" class="form-control bg-light border-0" placeholder="Email" style="height: 55px;" required>
-                                </div>
-                                <div class="col-12">
-                                    <input type="password" name="password" class="form-control bg-light border-0" placeholder="Contraseña" style="height: 55px;" required>
-                                </div>
-                                <div class="col-12">
-                                    <input type="password" name="confirm_password" class="form-control bg-light border-0" placeholder="Confirme la contraseña" style="height: 55px;" required>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <select class="form-control bg-light border-0"  style="height: 55px;" name="account_type" id="account_type">
-                                        <option name="account_type" disabeled>¿Eres psicólogo?</option>
-                                        <option name="account_type" value="0">Si</option>
-                                        <option name="account_type" value="1">No</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <button href="" class="btn btn-primary w-100 py-3" type="submit">Registrarse</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+            </div>
+            <div class="col">
+                <a href="/terapia_infantil"><img src="{{ url_for('static', filename='img/terapia-infantil.jpg')}}" class="card-img-top" alt="..." style="height: 230px; border-radius: 43px;"></a>
+                <div class="card-body">
+                    <h4 class="text-center rounded text-light" style="background-color: #faa330;">Terapia Online Individual Ñiños/as y Adolescentes</h4>
+                </div>
+            </div>
+            <div class="col">
+                <a href="/diagnostico"><img src="{{ url_for('static', filename='img/terapia-individual.jpeg')}}" class="card-img-top" alt="..." style="height: 230px; border-radius: 43px;"></a>
+                <div class="card-body">
+                    <h4 class="text-center rounded text-light" style="background-color: #faa330;">Psicodiagnostico Presencial</h4>
+                </div>
+            </div>
+            <div class="col">
+                <a href="terapia_online"><img src="{{ url_for('static', filename='img/terapia-online.jpg')}}" class="card-img-top" alt="..." style="height: 230px; border-radius: 43px;"></a>
+                <div class="card-body">
+                    <h4 class="text-center rounded text-light" style="background-color: #faa330;">Terapia Online A Bajo Costo</h4>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Appointment End -->
+    <!-- Servicios End -->
 
 
         <!-- Blog Start -->
-        <div class="container-fluid py-5">
+        <!-- <div class="container-fluid py-5" >
             <div class="container">
                 <div class="text-center mx-auto mb-5" style="max-width: 500px;">
                     <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Blog</h5>
@@ -103,9 +78,28 @@
                     {%endfor%}
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Blog End -->
 
+
+    <!-- Quienes somos -->
+    <div class="container-fluid my-5">
+        <div class="col">
+            <h1 class="text-center" style="color: #2d61e9;">¿Quiénes somos?</h1>
+        </div>
+        <br>
+        <div class="col text-center">
+            <h3 class="text-center text-light rounded" style="background-color: #faa330;">En Espacio Metanoia, nuestra misión es ofrecer un lugar seguro y acogedor donde cada persona pueda encontrar apoyo emocional y crecer en su
+                bienestar. Nos dedicamos a brindar atención psicoterapéutica respetuosa, accesible y personalizada, acompañando a cada individuo en su
+                camino hacia una vida más plena y saludable."</h3>
+        </div>
+        <br>
+        <div class="col text-center mx-5">
+            <h3 class="text-center text-light rounded" style="background-color: #2d61e9;"> Somos el espacio en el que te puedes sentir seguro y libre de prejuicios, somos espacio metanoia.</h3>
+        </div>
+        <br>
+    </div>
+    <!-- Hero End -->
 {% endblock %}
 
 

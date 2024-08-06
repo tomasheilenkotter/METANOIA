@@ -40,8 +40,8 @@
                         <p class="d-flex align-items-center bg-light mb-3 text-black">Descripción:</p>
                         <textarea class="col-12 mb-3" type="text" name="description" cols="50" rows="3" class="text-black" value="{{therapist.description}}">{{therapist.description}}</textarea>
                         <div class="row therapist-stats">
-                            <p class="col-md-2"> Edad: <br> <input class="h6" name="age" value="{{therapist.age}}"></input> </p>
-                            <p class="col-md-2"> CDR: <br> <input class="h6" name="cdr" value="{{therapist.cdr}}"></input> </p>
+                            <p class="col-md-2"> Edad: <br> <input class="h6" name="age" value="{{therapist.age}}"></input></p>
+                            <p class="col-md-2"> CDR: <br> <input class="h6" name="cdr" value="{{therapist.cdr}}"></input></p>
                             <p class="col-md-2"> Género: <br><select name="gender" id="gender" class="form-control bg-white border-0"
                                 placeholder="Género" style="height: 55px;" required>
                                 <option name="gender" id="" value="" disabled selected>Selecciona tu género</option>
@@ -54,8 +54,7 @@
                                 <option name="gender" id="" value="agender">Agender</option>
                                 <option name="gender" id="" value="other">Otro</option>
                             </select></p>
-                            <p class="col-md-2"> Modalidad:<select name="modalidad" id="modalidad" class="form-control bg-white border-0"
-                                placeholder="Modalidad de consulta" style="height: 55px;" required>
+                            <p class="col-md-2"> Modalidad:<select name="modalidad" id="modalidad" class="form-control bg-white border-0" placeholder="Modalidad de consulta" style="height: 55px;" required>
                                 <option name="modalidad" id="" value="" disabled selected>Selecciona la modalidad de tu consulta</option>
                                 <option name="modalidad" id="" value="office">In person/Office</option>
                                 <option name="modalidad" id="" value="remote">Remote/Virtual</option>
@@ -66,7 +65,7 @@
                     </form>
                         <p class="mt-5">Temas:</p>
                         <div class="topics">
-                            {%for category in therapist.categories%}
+                            {% for category in therapist.categories%}
                             <p class="profile-category">{{category.name}} <a class="h5" href="/delete/{{category.id}}" style="font-size:0.7rem; color:rgb(6, 64, 117)">X</a></p>
                             {%endfor%}
                         </div>

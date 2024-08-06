@@ -13,12 +13,10 @@ PyMySQL==1.0.2
 
 Pasos para instalar y ejecutar la aplicación.
 
-Asumiendo que el ejecutable de python es "python3":
-
 1. Instalar el Ambiente Virtual:
 
-python3 -m venv mi_env
-
+python3 -m venv mi_env (para MACS)
+python -m venv mi_env (para Windows)
 
 2. Activar el Ambiente Virtual:
 

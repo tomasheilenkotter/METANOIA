@@ -1,4 +1,5 @@
-from app.models.connection import connectToMySQL
+"""from app.models.connection import connectToMySQL"""
+from app.config.connections import MySQLConnection, connectToMySQL
 
 class CreateTables:
 

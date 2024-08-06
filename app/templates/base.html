@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>PSICOAPP</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>METANOIA</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
@@ -35,9 +35,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/toastr.min.css')}}">
 
     <!-- icono de Psicoapp -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='img/apple-touch-icon.png')}}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='img/favicon-32x32.png')}}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='img/favicon-16x16.png')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='img/logo_pequeño.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='img/logo_pequeño.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='img/logo_pequeño.png')}}">
     <link rel="manifest" href="{{ url_for('static', filename='img/site.webmanifest')}}">
 
     <!-- content delivery network (CDN - Content delivery network): -->
@@ -53,33 +53,16 @@
 
 <body>
     <!-- Topbar Start -->
-    <div class="container-fluid py-2 border-bottom d-none d-lg-block">
+    <div class="container-fluid py-2 d-none d-lg-block" style="background-color: #2d61e9;">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
-                    <div class="d-inline-flex align-items-center">
-                        <a class="text-decoration-none text-body px-3" href=""><i
-                                class="bi bi-envelope me-2"></i>info@psicoapp.com</a>
-                    </div>
+                    <a href="/"><img src="{{ url_for('static', filename='img/logo_topbar.png')}}" style="width: 200px; height: 40px; padding-right: 10px;" alt=""></a>
                 </div>
                 <div class="col-md-6 text-center text-lg-end">
-                    <div class="d-inline-flex align-items-center">
-                        <a class="text-body px-2" href="">
-                            <i class="fab fa-facebook-f"></i>
+                        <a class="text-body px-2" href="https://www.instagram.com/espaciometanoiacl?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                            <img src="{{ url_for('static', filename='img/logo_ig.png')}}" alt="" style="width: 40px;">
                         </a>
-                        <a class="text-body px-2" href="">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a class="text-body px-2" href="">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a class="text-body px-2" href="">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a class="text-body ps-2" href="">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -87,59 +70,49 @@
     <!-- Topbar End -->
 
 
-    <!-- Navbar Start -->
-    <div class="container-fluid sticky-top bg-white shadow-sm">
+    <div class="container-fluid shadow-sm">
         <div class="container">
-            <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
+            <nav class="navbar navbar-expand-lg navbar-light py-3 py-lg-0">
                 <a href="/" class="navbar-brand">
-                    <h1 class="m-0 text-uppercase text-primary"><span><img
-                                src="{{ url_for('static', filename='img/psychologist_icon.png')}}"
-                                style="width: 65px; height: 60px; padding-right: 10px;" alt=""></span>PSICOAPP</h1>
+                    <h1 class="m-0" style="color: #2d61e9;">¡Bienvenid@!</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                {% if logged%}
                 <form action="/search-therapist" method="post">
                     <div class="row px-5 mx-5">
                         <div class="col-10 p-0">
                             <input name="text" type="text" class="form-control m-0" placeholder="Busca un psicólogo">
                         </div>
                         <div class="col-2 p-0">
-                            <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+                            <button class="btn" style="background-color: #2d61e9;"><i class="fa text-light fa-search"></i></button>
                         </div>
                     </div>
                 </form>
+                {%endif%}
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="mb-8">
                     </div>
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="/" class="nav-item nav-link">Home</a>
                         {% if logged%}
                         {%if user.type == 0%}
-                        <a href="/tprofile/{{user.id}}" class="nav-item nav-link"><ion-icon class="edit-icon-profile"
-                                name="person-circle-outline"></ion-icon></a>
-                        <a href="/edit-therapist" class="nav-item nav-link"><ion-icon class="edit-icon-profile"
-                                name="cog-outline"></ion-icon></a>
+                        <a href="/tprofile/{{user.id}}" class="nav-item nav-link"><ion-icon class="edit-icon-profile" name="person-circle-outline"></ion-icon></a>
+                        <a href="/edit-therapist" class="nav-item nav-link"><ion-icon class="edit-icon-profile" name="cog-outline"></ion-icon></a>
                         {%elif user.type == 1%}
-                        <a href="/patient-reg" class="nav-item nav-link"><ion-icon class="edit-icon-profile"
-                                name="cog-outline"></ion-icon></a>
+                        <a href="/patient-reg" class="nav-item nav-link"><ion-icon class="edit-icon-profile" name="cog-outline"></ion-icon></a>
                         {%endif%}
-                        <a href="/messages" class="nav-item nav-link"><ion-icon class="edit-icon-profile"
-                                name="mail-unread-outline"></ion-icon></a>
-                        <a href="/logout" class="nav-item nav-link">
-                            <img src="{{ url_for('static', filename='img/logout.png')}}"
-                                style="height: 30px; width: 30px;" alt="Cerrar sesión">
-                        </a>
+                        <a href="/messages" class="nav-item nav-link"><ion-icon class="edit-icon-profile" name="mail-unread-outline" ></ion-icon></a>
+                        <a href="/logout" class="nav-item nav-link" ><ion-icon class="edit-icon-profile" name="exit-outline"></ion-icon></a>
                         {% else %}
-                        <a href="/login" class="nav-item nav-link">Log in</a>
+                        <!-- <a href="/register" class="nav-item text-dark nav-link">Registrarse</a> -->
+                        <!-- <a href="/login" class="nav-item text-dark nav-link">Iniciar sesión</a> -->
                         {% endif %}
                     </div>
                 </div>
             </nav>
         </div>
     </div>
-
-    <!--Navbar end-->
 
     <main role="main">
         {% block main %}
@@ -148,48 +121,25 @@
     </main>
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light mt-5 py-5">
+    <div class="container-fluid text-light py-5" style="background-color: #2d61e9;">
         <div class="container py-5">
             <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">
-                        Contáctanos</h4>
-                    <p class="mb-4">No dudes en contactarnos si tienes alguna duda</p>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>123
-                        Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@pasicoapp.com</p>
-                    <p class="mb-0"><i class="fa fa-phone-alt text-primary me-3"></i>+123 456 78 90
-                    </p>
+                <div class="col">
+                    <img src="{{ url_for('static', filename='img/titulo_navbar.png')}}" alt="">
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">
-                        Popular Links</h4>
+                <div class="col">
+                    <h4 class="d-inline-block text-uppercase border-bottom border-5 border-light mb-4" style="color: #faa330;">Espacio Metanoia</h4>
                     <div class="d-flex flex-column justify-content-start">
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Home</a>
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Acerca</a>
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>blog</a>
-                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Contáctanos</a>
+                        <a class="text-light mb-2" href="/"><i class="fa fa-angle-right me-2"></i>Inicio</a>
+                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Sobre nosotros</a>
+                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Servicios</a>
+                        <a class="text-light mb-2" href="https://docs.google.com/forms/d/1s8ArcOjIQOpHszV6xWkms4n16v-iVjomaLy4gKEw13g/viewform?edit_requested=true"><i class="fa fa-angle-right me-2"></i>Haz tu PsicoMatch</a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">
-                        Newsletter</h4>
-                    <form action="">
-                        <div class="input-group">
-                            <input type="text" class="form-control p-3 border-0" placeholder="Email">
-                            <button class="btn btn-primary">Enviar</button>
-                        </div>
-                    </form>
-                    <h6 class="text-primary text-uppercase mt-4 mb-3">Síguenos</h6>
-                    <div class="d-flex">
-                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i
-                                class="fab fa-twitter"></i></a>
-                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle" href="#"><i
-                                class="fab fa-instagram"></i></a>
+                <div class="col">
+                    <h4 class="d-inline-block text-uppercase border-bottom border-5 border-light mb-4" style="color: #faa330;">Contáctanos</h4>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-light mb-2" href="/"><i class="fa fa-angle-right me-2"></i>contacto@espaciometanoia.cl</a>
                     </div>
                 </div>
             </div>
@@ -199,7 +149,7 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-md-0">&copy; <a class="text-primary" href="#">PSICOAPP</a>. Todos
+                    <p class="mb-md-0">&copy; <a class="text-primary" href="#">METANOIA</a>. Todos
                         los derechos
                         reservados.</p>
                 </div>
@@ -239,15 +189,7 @@
     <!-- Template Javascript -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/main.js')}}"></script>
 
-    <script>
-        {% with messages = get_flashed_messages(with_categories=true) %} 
-            {% if messages %}
-                {% for category, message in messages %}
-                    toastr.{{category}}("{{message}}");
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-    </script>
+
 
     {% block javascript %}{% endblock %}
 </body>

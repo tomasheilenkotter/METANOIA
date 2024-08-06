@@ -115,8 +115,8 @@ class Therapist(User):
 
         modalidad = {
             'office': 'Consultorio - Presencial',
-            'hybrid': 'Hibrido - Presencial/Virtual',
-            'remote': 'Remoto - Virtual'
+            'remote': 'Remoto - Virtual',
+            'hybrid': 'Hibrido - Presencial/Virtual'
         }
         therapist.modalidad = modalidad[therapist.modalidad]
         therapist.gender = gender[therapist.gender]
