@@ -32,7 +32,7 @@ class Therapist(User):
         self.articles = []
         self.education =[]
         self.address = ''
-        
+        self.calendar = data['calendar']
 
 
     @classmethod
@@ -55,6 +55,7 @@ class Therapist(User):
                 metodo = %(metodo)s,
                 city = %(city)s,
                 profile_path = '',
+                calendar = %(calendar)s,
                 validated = 2
                 where id = %(therapist_id)s
                 '''
@@ -68,7 +69,8 @@ class Therapist(User):
             'gender' :form_data['gender'],
             'modalidad': form_data['modalidad'],
             'description' : form_data['description'],
-            'metodo' : form_data['metodo']
+            'metodo' : form_data['metodo'],
+            'calendar' : form_data['calendar']
             }
         
         

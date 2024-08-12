@@ -10,45 +10,24 @@
 
 <!-- Blog Start -->
 <div class="container py-5">
-    <div class="row">
-        <div class="col-8">
+    <div class="row text-center">
+        <div class="col">
             <div>
-                <h1 class="text-center text-light rounded" style="background-color: #2d61e9;">Terapia Online Individual Adultos y Adultos Jovenes</h1>
+                <h1 class="text-center text-light rounded" style="background-color: #2d61e9;">Psicodiagnóstico Presencial</h1>
+                <br>
+                <img src="{{ url_for('static', filename='img/foto-diagnostico.png')}}" alt="" class="img-fluid vertical-image mb-4" style="width: 500px;">
                 <br>
                 <span class="text-dark">
-                    En Metanoia, ofrecemos terapia psicológica online individual a tan solo <b>$25.000</b>, diseñada especialmente
-                    para adultos y adultos jóvenes mayores de 18 años. Nuestro enfoque personalizado y profesional
-                    permite a los pacientes recibir atención psicoterapéutica de alta calidad desde cualquier lugar, utilizando
-                    plataformas digitales seguras y confiables.
+                    El psicodiagnóstico es un proceso utilizado para identificar diversas patologías y trastornos. Este procedimiento incluye dos entrevistas clínicas y entre una y dos sesiones de evaluación.
+                    Al finalizar, se entrega un informe detallado dirigido a quien solicita el diagnóstico, además de realizar una devolución al paciente. 
+                    El costo total del psicodiagnóstico, que incluye todos estos servicios, es de <b>$80.000</b>. Las sesiones se realizan de manera presencial en Las Condes.
                 </span>
             </div>
             <br>
-            <div>
-                <h5> Beneficios de la Terapia Psicológica Online Individual</h5>
-                <ul class="text-dark">
-                    <li> Accesibilidad y Comodidad: Recibe atención desde la comodidad de tu hogar, sin necesidad de
-                        desplazarte.
-                    </li>
-                    <li>
-                        Flexibilidad Horaria: Programa tus sesiones en horarios convenientes, incluyendo noches y fines de semana.
-                    </li>
-                    <li>
-                        Privacidad y Confidencialidad: Un entorno seguro donde puedes abrirte sobre tus preocupaciones con
-                        total confianza.
-                    </li>
-                    <li>
-                        Eliminación de Barreras Geográficas: Accede a profesionales cualificados sin importar dónde te encuentres.
-                    </li>
-                </ul>
-            </div>
-            <br>
             <div class="text-center">
-                <button type="button" class="btn text-light mx-5" style="background-color: #2d61e9;"><a href="/agendar_sesion" class="text-light">Agenda tu sesión</a></button>    
-                <button href="" type="button" class="btn text-light mx-5" style="background-color: #2d61e9;"><a class="text-light" href="https://docs.google.com/forms/d/1s8ArcOjIQOpHszV6xWkms4n16v-iVjomaLy4gKEw13g/viewform?edit_requested=true">Haz tu PsicoMatch</a></button>    
+                <button href="" type="button" class="btn text-light mx-5" style="background-color: #2d61e9;"><a class="text-light" href="https://docs.google.com/forms/d/1s8ArcOjIQOpHszV6xWkms4n16v-iVjomaLy4gKEw13g/viewform?edit_requested=true">Agenda tu sesión</a></button>  
+                <!-- <button type="button" class="btn text-light mx-5" style="background-color: #2d61e9;"><a href="/agendar_sesion" class="text-light">Agenda tu sesión</a></button> --> 
             </div>
-        </div>
-        <div class="col-4">
-            <img src="{{ url_for('static', filename='img/material_1.png')}}" alt="" style="width: 480px;">
         </div>
     </div>
 </div>
@@ -73,9 +52,9 @@
             <!--Start carousel-->
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
+                    <div class="carousel-item active mb-5">
                         <div class="row">
-                            <div class="col" style="height: 500px;">
+                            <div class="col d-flex align-items-center" style="height: fit-content;">
                                 <a href="/tprofile/9">
                                     <div class="card" style="background-color: #faa330;">
                                         <br>
@@ -84,7 +63,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col" style="height: 500px;">
+                            <div class="col d-flex align-items-center" style="height: fit-content;">
                                 <a href="/tprofile/2">
                                     <div class="card" style="background-color: #faa330;">
                                         <br>
@@ -93,7 +72,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col" style="height: 500px;">
+                            <div class="col d-flex align-items-center" style="height: fit-content;">
                                 <a href="/tprofile/3">
                                     <div class="card" style="background-color: #faa330;">
                                         <br>
@@ -102,11 +81,7 @@
                                     </div>
                                 </a>
                             </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row">
-                            <div class="col" style="height: 500px;">
+                            <div class="col d-flex align-items-center" style="height: fit-content;">
                                 <a href="/tprofile/8">
                                     <div class="card" style="background-color: #faa330;">
                                         <br>
@@ -115,7 +90,11 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col" style="height: 500px;">
+                        </div>
+                    </div>
+                    <div class="carousel-item mb-5">
+                        <div class="row">
+                            <div class="col d-flex align-items-center" style="height: fit-content;">
                                 <a href="/tprofile/4">
                                     <div class="card" style="background-color: #faa330;">
                                         <br>
@@ -124,7 +103,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col" style="height: 500px;">
+                            <div class="col d-flex align-items-center" style="height: fit-content;">
                                 <a href="/tprofile/6">
                                     <div class="card" style="background-color: #faa330;">
                                         <br>
@@ -133,12 +112,19 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col" style="height: 500px;">
+                            <div class="col d-flex align-items-center" style="height: fit-content;">
                                 <a href="/tprofile/10">
                                     <div class="card" style="background-color: #faa330;">
                                         <br>
                                         <h3 class="card-title text-center">Esperanza Mena</h3>
-                                        <img src="{{ url_for('static', filename='img/therapist/foto_esperanza.png')}}" class="card-img-top" alt="Williams Zamorano">
+                                        <img src="{{ url_for('static', filename='img/therapist/foto_esperanza.png')}}" class="card-img-top" alt="Esperanza Mena">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col d-flex align-items-center" style="height: fit-content;">
+                                <a href="">
+                                    <div class="card" style="background-color: #faa330;">
+                                        <h3 class="card-title text-center">¿Eres psicólogo/a y quieres ser parte de espacio Metanoia? ¡Contáctanos!</h3>
                                     </div>
                                 </a>
                             </div>
@@ -161,7 +147,7 @@
 </div>
 
 <!-- Quienes somos -->
-<div class="container-fluid my-5">
+<div class="container my-5">
     <div class="col">
         <h1 class="text-center" style="color: #2d61e9;">¿Quiénes somos?</h1>
     </div>
@@ -169,7 +155,7 @@
     <div class="col text-center">
         <h3 class="text-center text-light rounded" style="background-color: #faa330;">En Espacio Metanoia, nuestra misión es ofrecer un lugar seguro y acogedor donde cada persona pueda encontrar apoyo emocional y crecer en su
             bienestar. Nos dedicamos a brindar atención psicoterapéutica respetuosa, accesible y personalizada, acompañando a cada individuo en su
-            camino hacia una vida más plena y saludable."</h3>
+            camino hacia una vida más plena y saludable.</h3>
     </div>
     <br>
     <div class="col text-center mx-5">

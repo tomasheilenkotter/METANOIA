@@ -144,3 +144,8 @@ def terapia_online():
 @page.route('/agendar_sesion')
 def agendar_sesion():
     return render_template('agendar_sesion.html')
+
+@page.route('/sobre-nosotros')
+def sobre_nosotros():
+    return render_template('sobre_nosotros.html')
+

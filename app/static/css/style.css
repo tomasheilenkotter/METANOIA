@@ -97,10 +97,10 @@
 }
 
 .hero-header {
-    background: url(../img/foto_inicio.jpeg) top right no-repeat;
+    background: url(../img/foto-inicio.png) top right no-repeat;
     background-size: cover;
     opacity: 0.9;
-    height: 200px;
+    height: 400px;
 }
 
 .service-item {
@@ -416,4 +416,8 @@
         background-position: center center;
     }
 }
- 
+
+ion-icon {
+    font-size: 80px;
+    color: #2d61e9;
+}

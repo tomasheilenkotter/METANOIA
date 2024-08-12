@@ -7,6 +7,49 @@
 {% endblock %}
 
 {% block main %}
+<div class="container-fluid shadow-sm">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light py-3 py-lg-0">
+            <a href="/" class="navbar-brand">
+                <h1 class="m-0" style="color: #2d61e9;">¡Bienvenid@!</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            {% if logged%}
+            <form action="/search-therapist" method="post">
+                <div class="row px-5 mx-5">
+                    <div class="col-10 p-0">
+                        <input name="text" type="text" class="form-control m-0" placeholder="Busca un psicólogo">
+                    </div>
+                    <div class="col-2 p-0">
+                        <button class="btn" style="background-color: #2d61e9;"><i class="fa text-light fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+            {%endif%}
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="mb-8">
+                </div>
+                <div class="navbar-nav ms-auto py-0">
+                    {% if logged%}
+                    {%if user.type == 0%}
+                    <a href="/tprofile/{{user.id}}" class="nav-item nav-link"><ion-icon class="edit-icon-profile" name="person-circle-outline"></ion-icon></a>
+                    <a href="/edit-therapist" class="nav-item nav-link"><ion-icon class="edit-icon-profile" name="cog-outline"></ion-icon></a>
+                    {%elif user.type == 1%}
+                    <a href="/patient-reg" class="nav-item nav-link"><ion-icon class="edit-icon-profile" name="cog-outline"></ion-icon></a>
+                    {%endif%}
+                    <a href="/messages" class="nav-item nav-link"><ion-icon class="edit-icon-profile" name="mail-unread-outline" ></ion-icon></a>
+                    <a href="/logout" class="nav-item nav-link" ><ion-icon class="edit-icon-profile" name="exit-outline"></ion-icon></a>
+                    {% else %}
+                    <!-- <a href="/register" class="nav-item text-dark nav-link">Registrarse</a> -->
+                    <!-- <a href="/login" class="nav-item text-dark nav-link">Iniciar sesión</a> -->
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
 <!-- Navbar End -->
 
     <!-- Hero Start -->
@@ -14,10 +57,10 @@
         <div id="carouselExampleSlidesOnly" class="carousel slide texto_carousel position-absolute top-50 start-50 translate-middle" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active rounded" style="background-color: #faa330;">
-                    <h2 class="text-center">¿No sabes que psicólogo/a escoger? ¡Haz tu PsicoMatch!</h2>
+                    <h2 class="text-center text-light">¿No sabes que psicólogo/a escoger? ¡Haz tu PsicoMatch!</h2>
                 </div>
                 <div class="carousel-item rounded" style="background-color: #faa330;">
-                    <h2 class="text-center">¡Conoce todos nuestros servicios a bajo costo!</h2>
+                    <h2 class="text-center text-light">¡Conoce todos nuestros servicios a bajo costo!</h2>
                 </div>
             </div>
         </div>
@@ -26,31 +69,67 @@
 
 
     <!-- Servicios Start -->
-    <div class="container-fluid py-5 px-3">
+    <div class="container py-5 px-3 text-center">
         <div class="row row-cols-1 row-cols-md-4 g-4">
             <div class="col">
-                <a href="/terapia_adultos"><img src="{{ url_for('static', filename='img/terapia-individual.jpeg')}}" class="card-img-top" alt="..." style="height: 230px; border-radius: 43px;"></a>
-                <div class="card-body">
-                    <h4 class="text-center rounded text-light" style="background-color: #faa330;">Terapia Online Individual Adultos y Adultos Jovenes</h4>
-                </div>
+                <a href="/terapia_adultos">
+                    <div class="card" style="height: 370px; box-shadow: 0 3px 10px #C0A8EF;">
+                        <div class="card-body">
+                            <ion-icon name="person-circle-outline"></ion-icon>
+                            <h4 class="card-title mt-4">Terapia Online Individual Adultos y Adultos Jovenes</h4>
+                            <br>
+                            <p class="card-text text-dark">
+                                Terapia individual desde los 18 años. Las sesiones tienen una duración de 45-50 minutos, 
+                                y se realiza 1 o 2 veces por semana, según las necesidades del paciente.
+                            </p>
+                        </div>
+                    </div>
+                </a>
             </div>
             <div class="col">
-                <a href="/terapia_infantil"><img src="{{ url_for('static', filename='img/terapia-infantil.jpg')}}" class="card-img-top" alt="..." style="height: 230px; border-radius: 43px;"></a>
-                <div class="card-body">
-                    <h4 class="text-center rounded text-light" style="background-color: #faa330;">Terapia Online Individual Ñiños/as y Adolescentes</h4>
-                </div>
+                <a href="/terapia_infantil">
+                    <div class="card" style="height: 370px; box-shadow: 0 3px 10px #C0A8EF;">
+                        <div class="card-body">
+                            <ion-icon name="extension-puzzle-outline"></ion-icon>
+                            <h4 class="card-title mt-4">Terapia Online Individual Niños/as y Adolescentes</h4>
+                            <br>
+                            <p class="card-text text-dark">
+                                Terapia individual para adolescentes de 8 a 17 años. Sesiones de 45-50 minutos donde,
+                                mediante juego y arte, se les ayuda a expresarse y abordar sus problemas.
+                            </p>
+                        </div>
+                    </div>
+                </a>
             </div>
             <div class="col">
-                <a href="/diagnostico"><img src="{{ url_for('static', filename='img/terapia-individual.jpeg')}}" class="card-img-top" alt="..." style="height: 230px; border-radius: 43px;"></a>
-                <div class="card-body">
-                    <h4 class="text-center rounded text-light" style="background-color: #faa330;">Psicodiagnostico Presencial</h4>
-                </div>
+                <a href="/diagnostico">
+                    <div class="card" style="height: 370px; box-shadow: 0 3px 10px #C0A8EF;">
+                        <div class="card-body">
+                            <ion-icon name="clipboard-outline"></ion-icon>
+                            <h4 class="card-title mt-4">Psicodiagnóstico Presencial</h4>
+                            <br>
+                            <p class="card-text text-dark">
+                                Consta de dos entrevistas clínicas y 1-2 sesiones de evaluación e incluye 
+                                informe para el solicitante y retroalimentación para el paciente.
+                            </p>
+                        </div>
+                    </div>
+                </a>
             </div>
             <div class="col">
-                <a href="terapia_online"><img src="{{ url_for('static', filename='img/terapia-online.jpg')}}" class="card-img-top" alt="..." style="height: 230px; border-radius: 43px;"></a>
-                <div class="card-body">
-                    <h4 class="text-center rounded text-light" style="background-color: #faa330;">Terapia Online A Bajo Costo</h4>
-                </div>
+                <a href="/terapia_online">
+                    <div class="card" style="height: 370px; box-shadow: 0 3px 10px #C0A8EF;">
+                        <div class="card-body">
+                            <ion-icon name="checkmark-circle-outline"></ion-icon>
+                            <h4 class="card-title mt-4">¡Terapia a bajo costo! Conoce nuestros paquetes</h4>
+                            <br>
+                            <p class="card-text text-dark">
+                                Haz clic aquí para descubrir nuestros precios especiales 
+                                y aprovechar nuestras ofertas exclusivas.
+                            </p>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
@@ -83,7 +162,7 @@
 
 
     <!-- Quienes somos -->
-    <div class="container-fluid my-5">
+    <div class="container my-5">
         <div class="col">
             <h1 class="text-center" style="color: #2d61e9;">¿Quiénes somos?</h1>
         </div>

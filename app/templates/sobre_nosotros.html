@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% block home %} active {% endblock %}
+
+{% block styles %} 
+<style>
+</style>
+{% endblock %}
+
+{% block main %}
+    <!-- Quienes somos -->
+    <div class="container my-5 rounded" style="background-color: #2d61e9;">
+        <br>
+        <div class="col text-center">
+            <h1 class="text-center text-light">¿Quiénes somos?</h1>
+            <img src="{{ url_for('static', filename='img/carita-naranja.png')}}" alt="" style="width: 500px;" class="img-fluid vertical-image">
+        </div>
+        <div class="col text-center mx-5">
+            <h3 class="text-center text-light rounded">En Espacio Metanoia, nuestra misión es ofrecer un lugar seguro y acogedor donde cada persona pueda encontrar apoyo emocional y crecer en su
+                bienestar. Nos dedicamos a brindar atención terapéutica respetuosa, accesible y personalizada, acompañando a cada individuo en su
+                camino hacia una vida más plena y saludable.</h3>
+        </div>
+        <br>
+        <div class="col text-center mx-5">
+            <h3 class="text-center text-light rounded"> Somos el espacio en el que te puedes sentir seguro y libre de prejuicios, somos espacio metanoia.</h3>
+        </div>
+        <br>
+    </div>
+    <!-- Hero End -->
+
+    <div class="container-fluid" style="background-color: #2d61e9;">
+        <br>
+        <h3 class="text-light text-center">¡Conoce a nuestros Psicólogos/as!</h3>
+        <br>
+        <div class="row">
+            <div class="col-1 d-flex align-items-center justify-content-center">
+                <a href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <div class="carousel-nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <path d="m88.6,121.3c0.8,0.8 1.8,1.2 2.9,1.2s2.1-0.4 2.9-1.2c1.6-1.6 1.6-4.2 0-5.8l-51-51 51-51c1.6-1.6 1.6-4.2 0-5.8s-4.2-1.6-5.8,0l-54,53.9c-1.6,1.6-1.6,4.2 0,5.8l54,53.9z"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <!--Start carousel-->
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active mb-5">
+                            <div class="row">
+                                <div class="col d-flex align-items-center" style="height: fit-content;">
+                                    <a href="/tprofile/9">
+                                        <div class="card" style="background-color: #faa330;">
+                                            <br>
+                                            <h3 class="card-title text-center">Walter Acuña</h3>
+                                            <img src="{{ url_for('static', filename='img/therapist/foto_walter.png')}}" class="card-img-top" alt="Walter Acuña">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col d-flex align-items-center" style="height: fit-content;">
+                                    <a href="/tprofile/2">
+                                        <div class="card" style="background-color: #faa330;">
+                                            <br>
+                                            <h3 class="card-title text-center" style="text-align: justify;">Thanya Casanova</h3>
+                                            <img src="{{ url_for('static', filename='img/therapist/foto_thanya.png')}}" class="card-img-top" alt="Thanya Casanova">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col d-flex align-items-center" style="height: fit-content;">
+                                    <a href="/tprofile/3">
+                                        <div class="card" style="background-color: #faa330;">
+                                            <br>
+                                            <h3 class="card-title text-center">Laura Martinez</h3>
+                                            <img src="{{ url_for('static', filename='img/therapist/foto_laura.png')}}" class="card-img-top" alt="Laura Martinez">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col d-flex align-items-center" style="height: fit-content;">
+                                    <a href="/tprofile/8">
+                                        <div class="card" style="background-color: #faa330;">
+                                            <br>
+                                            <h3 class="card-title text-center">Antonia Saldias</h3>
+                                            <img src="{{ url_for('static', filename='img/therapist/foto_anto.png')}}" class="card-img-top" alt="Antonia Saldias">
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item mb-5">
+                            <div class="row">
+                                <div class="col d-flex align-items-center" style="height: fit-content;">
+                                    <a href="/tprofile/4">
+                                        <div class="card" style="background-color: #faa330;">
+                                            <br>
+                                            <h3 class="card-title text-center">Isidora Schlesinger</h3>
+                                            <img src="{{ url_for('static', filename='img/therapist/foto_isi.png')}}" class="card-img-top" alt="Isidora Schlesinger">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col d-flex align-items-center" style="height: fit-content;">
+                                    <a href="/tprofile/6">
+                                        <div class="card" style="background-color: #faa330;">
+                                            <br>
+                                            <h3 class="card-title text-center">Williams Zamorano</h3>
+                                            <img src="{{ url_for('static', filename='img/therapist/foto_williams.png')}}" class="card-img-top" alt="Williams Zamorano">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col d-flex align-items-center" style="height: fit-content;">
+                                    <a href="/tprofile/10">
+                                        <div class="card" style="background-color: #faa330;">
+                                            <br>
+                                            <h3 class="card-title text-center">Esperanza Mena</h3>
+                                            <img src="{{ url_for('static', filename='img/therapist/foto_esperanza.png')}}" class="card-img-top" alt="Esperanza Mena">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col d-flex align-items-center" style="height: fit-content;">
+                                    <a href="">
+                                        <div class="card" style="background-color: #faa330;">
+                                            <h3 class="card-title text-center">¿Eres psicólogo/a y quieres ser parte de espacio Metanoia? ¡Contáctanos!</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!--End carousel-->
+        </div>
+        <div class="col-1 d-flex align-items-center justify-content-center">
+            <a  href="#carouselExampleIndicators" data-slide="next">
+                    <div class="carousel-nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <path d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
